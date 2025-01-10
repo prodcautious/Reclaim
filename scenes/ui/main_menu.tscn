@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=3 uid="uid://erdnfon0exaa"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_jpbi5"]
+[ext_resource type="FontFile" uid="uid://dpupbs0bgole2" path="res://assets/fonts/Minecraftia-Regular.ttf" id="1_kdfqh"]
+[ext_resource type="Texture2D" uid="uid://due1pxratxth4" path="res://assets/textures/ui/buttons/button_small_focus.png" id="1_omm2l"]
+[ext_resource type="Texture2D" uid="uid://bmsx32gdrk5ef" path="res://assets/textures/ui/buttons/button_small_pressed.png" id="1_t5y50"]
+[ext_resource type="Texture2D" uid="uid://dlu43bamd08ft" path="res://assets/textures/ui/buttons/button_small_hover.png" id="2_mahxv"]
+[ext_resource type="Texture2D" uid="uid://dyrmluxfsln3y" path="res://assets/textures/ui/buttons/button_small_normal.png" id="3_fgs33"]
+[ext_resource type="Script" path="res://scripts/ui/misc/custom_button.gd" id="5_iwhxw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3r5yk"]
+texture = ExtResource("1_omm2l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v1h3k"]
+texture = ExtResource("1_t5y50")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1obu5"]
+texture = ExtResource("2_mahxv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sloa2"]
+texture = ExtResource("1_t5y50")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivhlm"]
+texture = ExtResource("3_fgs33")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jpbi5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.560784, 0.384314, 0.435294, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.741176, 0.678431, 0.686275, 1)
+theme_override_fonts/font = ExtResource("1_kdfqh")
+theme_override_font_sizes/font_size = 64
+text = "Reclaim"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.34, 0.3128, 0.315973, 1)
+theme_override_colors/font_hover_color = Color(0.54, 0.4968, 0.50184, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.313726, 0.317647, 1)
+theme_override_colors/font_focus_color = Color(0.698039, 0.584314, 0.521569, 1)
+theme_override_colors/font_color = Color(0.741176, 0.678431, 0.686275, 1)
+theme_override_fonts/font = ExtResource("1_kdfqh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxTexture_3r5yk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_v1h3k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
+text = "Play"
+script = ExtResource("5_iwhxw")
+
+[node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.34, 0.3128, 0.315973, 1)
+theme_override_colors/font_hover_color = Color(0.54, 0.4968, 0.50184, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.313726, 0.317647, 1)
+theme_override_colors/font_focus_color = Color(0.698039, 0.584314, 0.521569, 1)
+theme_override_colors/font_color = Color(0.741176, 0.678431, 0.686275, 1)
+theme_override_fonts/font = ExtResource("1_kdfqh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxTexture_3r5yk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_v1h3k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
+text = "Options"
+script = ExtResource("5_iwhxw")
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.34, 0.3128, 0.315973, 1)
+theme_override_colors/font_hover_color = Color(0.54, 0.4968, 0.50184, 1)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.313726, 0.317647, 1)
+theme_override_colors/font_focus_color = Color(0.698039, 0.584314, 0.521569, 1)
+theme_override_colors/font_color = Color(0.741176, 0.678431, 0.686275, 1)
+theme_override_fonts/font = ExtResource("1_kdfqh")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxTexture_3r5yk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_v1h3k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
+text = "Quit"
+script = ExtResource("5_iwhxw")
+
+[connection signal="focus_entered" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="focus_entered" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="focus_entered" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
