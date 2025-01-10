@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmsx32gdrk5ef" path="res://assets/textures/ui/buttons/button_small_pressed.png" id="1_t5y50"]
 [ext_resource type="Texture2D" uid="uid://dlu43bamd08ft" path="res://assets/textures/ui/buttons/button_small_hover.png" id="2_mahxv"]
 [ext_resource type="Texture2D" uid="uid://dyrmluxfsln3y" path="res://assets/textures/ui/buttons/button_small_normal.png" id="3_fgs33"]
-[ext_resource type="Script" path="res://scripts/ui/misc/custom_button.gd" id="5_iwhxw"]
+[ext_resource type="PackedScene" uid="uid://csq0ssj8vk5ae" path="res://scenes/ui/button_animations.tscn" id="8_p6rwh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3r5yk"]
 texture = ExtResource("1_omm2l")
@@ -81,7 +81,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
 text = "Play"
-script = ExtResource("5_iwhxw")
+
+[node name="ButtonAnimations" parent="CenterContainer/VBoxContainer/Play" instance=ExtResource("8_p6rwh")]
+hover_scale = Vector2(1.1, 1.1)
 
 [node name="Options" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(128, 64)
@@ -101,7 +103,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
 text = "Options"
-script = ExtResource("5_iwhxw")
+
+[node name="ButtonAnimations" parent="CenterContainer/VBoxContainer/Options" instance=ExtResource("8_p6rwh")]
+hover_scale = Vector2(1.1, 1.1)
 
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(128, 64)
@@ -121,7 +125,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_1obu5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sloa2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ivhlm")
 text = "Quit"
-script = ExtResource("5_iwhxw")
+
+[node name="ButtonAnimations" parent="CenterContainer/VBoxContainer/Quit" instance=ExtResource("8_p6rwh")]
+hover_scale = Vector2(1.1, 1.1)
 
 [connection signal="focus_entered" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_mouse_entered"]

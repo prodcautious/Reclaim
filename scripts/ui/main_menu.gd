@@ -1,6 +1,10 @@
 extends Control
 
 @onready var play_button : Button = $CenterContainer/VBoxContainer/Play
+var debug_platform_override: String = "" #"console" for testing console play.
+
+func _ready():
+	set_focus_mode_by_platform()
 
 #Play Button Handling
 func _on_play_pressed() -> void:
@@ -35,9 +39,18 @@ func _on_quit_focus_entered() -> void:
 func _on_quit_mouse_entered() -> void:
 	SoundManager.play_sfx_sound("focus_1")
 
-
 func set_focus_mode_by_platform() -> void:
-	if OS.has_feature("console"):
-		play_button.grab_focus()
+	# Determine effective platform feature
+	var is_console: bool = debug_platform_override == "console" or OS.has_feature("console")
+	
+	# Log debug information
+	print("Current platform: ", OS.get_name())
+	print("Debug platform override: ", debug_platform_override)
+	print("Is console detected: ", is_console)
+	
+	# Apply focus mode logic based on platform
+	if is_console:
+		print("Feature 'console' detected (or simulated). Grabbing focus for play button.")
+		play_button.call_deferred("grab_focus")
 	else:
-		return
+		print("Feature 'console' not detected (or simulated). No focus adjustment needed.")
