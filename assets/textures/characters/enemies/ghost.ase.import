@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c4r0408ior8en"
+path="res://.godot/imported/ghost.ase-a6039768f94b6ffb2ee0eacda60c00cc.res"
+
+[deps]
+
+source_file="res://assets/textures/characters/enemies/ghost.ase"
+dest_files=["res://.godot/imported/ghost.ase-a6039768f94b6ffb2ee0eacda60c00cc.res"]
+
+[params]
+

@@ -1,15 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://8yoax1nlaxr4"]
+[gd_scene load_steps=6 format=3 uid="uid://8yoax1nlaxr4"]
 
 [ext_resource type="Script" path="res://scripts/game_controller/game_controller.gd" id="1_cgyuj"]
 [ext_resource type="PackedScene" uid="uid://ds4tlrr7gb5gj" path="res://scenes/ui/splash_screen_manager.tscn" id="2_3afp2"]
 [ext_resource type="PackedScene" uid="uid://d05cjmv03sdtv" path="res://scenes/towns/town_1.tscn" id="2_ib8mm"]
 [ext_resource type="PackedScene" uid="uid://u5vcq2seknoe" path="res://scenes/ui/transition_controller.tscn" id="3_f2etn"]
+[ext_resource type="PackedScene" uid="uid://cgsylqrcolms" path="res://scenes/characters/player.tscn" id="3_qc6tn"]
 
-[node name="GameController" type="Node" node_paths=PackedStringArray("world", "gui", "transition_controller")]
+[node name="GameController" type="Node" node_paths=PackedStringArray("world", "gui", "gui_camera", "transition_controller", "player")]
 script = ExtResource("1_cgyuj")
 world = NodePath("World")
 gui = NodePath("GUI")
+gui_camera = NodePath("Camera2D")
 transition_controller = NodePath("TransitionController")
+player = NodePath("Characters/Player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 270)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Player" parent="Characters" instance=ExtResource("3_qc6tn")]
+visible = false
 
 [node name="World" type="Node2D" parent="."]
 

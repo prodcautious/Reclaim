@@ -43,4 +43,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		for screen in splash_screens:
 			screen.modulate.a = 0.0
 		SoundManager.play_sfx_sound("skip_1")
-		Global.game_controller.change_gui_scene("res://scenes/ui/main_menu.tscn")
+		Global.game_controller.change_gui_scene("res://scenes/ui/main_menu.tscn", true, false, true, "fade_in", "fade_out", 1.0, false)
